@@ -8,30 +8,28 @@
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <h1 class="logo">Nails Kurwa</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="burger">&#9776;</div>
-      </nav>
-    </div>
+  <header class="navbar">
+    <div class="logo">Nails Kurwa</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">☰</div>
+    </nav>
   </header>
 
   <!-- Hero Slider -->
-  <section class="hero-slider">
-    <div class="slider">
+  <section class="hero-slider" id="home">
+    <div class="slides">
       <div class="slide active"><img src="assets/hero-1.jpg" alt="Nail design 1"></div>
       <div class="slide"><img src="assets/hero-2.jpg" alt="Nail design 2"></div>
       <div class="slide"><img src="assets/hero-3.jpg" alt="Nail design 3"></div>
     </div>
-    <div class="slider-nav">
+    <div class="slider-controls">
       <span class="prev">&#10094;</span>
       <span class="next">&#10095;</span>
     </div>
@@ -39,79 +37,65 @@
   </section>
 
   <!-- Services -->
-  <section id="services" class="section">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="assets/service-1.jpg" alt="Manicure">
-          <h3>Manicure</h3>
-          <p>Professional manicure with premium products.</p>
-        </div>
-        <div class="service-card">
-          <img src="assets/service-2.jpg" alt="Pedicure">
-          <h3>Pedicure</h3>
-          <p>Relaxing pedicure for perfect feet and nails.</p>
-        </div>
-        <div class="service-card">
-          <img src="assets/service-3.jpg" alt="Nail Art">
-          <h3>Nail Art</h3>
-          <p>Unique and creative designs for any occasion.</p>
-        </div>
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <img src="assets/service-1.jpg" alt="Manicure">
+        <h3>Manicure</h3>
+        <p>Professional manicure with premium products.</p>
+      </div>
+      <div class="card">
+        <img src="assets/service-2.jpg" alt="Pedicure">
+        <h3>Pedicure</h3>
+        <p>Relaxing pedicure for perfect feet and nails.</p>
+      </div>
+      <div class="card">
+        <img src="assets/service-3.jpg" alt="Nail Art">
+        <h3>Nail Art</h3>
+        <p>Unique and creative designs for any occasion.</p>
       </div>
     </div>
   </section>
 
   <!-- Gallery -->
-  <section id="gallery" class="section light">
-    <div class="container">
-      <h2>Gallery</h2>
-      <div class="gallery-slider">
-        <div class="gallery-track">
-          <img src="assets/gallery-1.jpg" alt="Gallery 1">
-          <img src="assets/gallery-2.jpg" alt="Gallery 2">
-          <img src="assets/gallery-3.jpg" alt="Gallery 3">
-          <img src="assets/gallery-4.jpg" alt="Gallery 4">
-        </div>
-        <div class="gallery-nav">
-          <span class="gallery-prev">&#10094;</span>
-          <span class="gallery-next">&#10095;</span>
-        </div>
+  <section class="gallery" id="gallery">
+    <h2>Our Gallery</h2>
+    <div class="gallery-slider">
+      <div class="gallery-slides">
+        <div class="gallery-slide active"><img src="assets/gallery-1.jpg" alt="Gallery 1"></div>
+        <div class="gallery-slide"><img src="assets/gallery-2.jpg" alt="Gallery 2"></div>
+        <div class="gallery-slide"><img src="assets/gallery-3.jpg" alt="Gallery 3"></div>
       </div>
+      <div class="gallery-controls">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+      </div>
+      <div class="gallery-dots"></div>
     </div>
   </section>
 
   <!-- Reviews -->
-  <section id="reviews" class="section">
-    <div class="container">
-      <h2>Customer Reviews</h2>
-      <div class="reviews">
-        <blockquote>
-          <p>"Amazing service, my nails never looked better!"</p>
-          <cite>- Anna P.</cite>
-        </blockquote>
-        <blockquote>
-          <p>"Very professional and friendly atmosphere."</p>
-          <cite>- Maria K.</cite>
-        </blockquote>
-      </div>
+  <section class="reviews" id="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review">
+      <p>"Amazing service! My nails have never looked better." - Sarah L.</p>
+    </div>
+    <div class="review">
+      <p>"Professional and creative. Highly recommend!" - Emma W.</p>
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="cta">
-    <div class="cta-content">
-      <h2>Book Your Appointment Today</h2>
-      <a href="https://wa.me/34123456789" target="_blank" class="btn">Book via WhatsApp</a>
-    </div>
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Book Your Appointment</h2>
+    <a href="https://wa.me/34123456789" class="btn">WhatsApp Us</a>
+    <a href="mailto:reservas@nailstudio.com" class="btn">Email Us</a>
   </section>
 
   <!-- Footer -->
-  <footer id="contact">
-    <div class="container footer-container">
-      <p>&copy; 2025 Nails Kurwa | All Rights Reserved</p>
-      <p>Contact: <a href="mailto:reservations@nailskurwa.com">reservations@nailskurwa.com</a></p>
-    </div>
+  <footer>
+    <p>&copy; 2025 Nails Kurwa. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
