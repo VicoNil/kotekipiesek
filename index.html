@@ -1,57 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nails Kurwa</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #e88a9e;
+      --primary-strong: #d46a83;
+      --bg-light: #fff;
+      --bg-soft: #fdfdfd;
+      --text-dark: #333;
+      --text-light: #777;
+      --radius: 12px;
+      --shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    * {margin:0;padding:0;box-sizing:border-box;}
+
+    body {background:var(--bg-soft);color:var(--text-dark);line-height:1.6;}
+
+    header {
+      position:sticky;top:0;z-index:1000;
+      background:var(--bg-light);box-shadow:var(--shadow);
+      display:flex;justify-content:space-between;align-items:center;
+      padding:1rem 2rem;
+    }
+    header h1 {color:var(--primary-strong);font-size:1.5rem;}
+    nav ul {display:flex;gap:1.5rem;list-style:none;}
+    nav a {text-decoration:none;color:var(--text-dark);font-weight:500;}
+    nav a:hover {color:var(--primary-strong);}
+    .menu-toggle {display:none;font-size:1.5rem;cursor:pointer;}
+
+    /* Hero Slider */
+    .hero {position:relative;overflow:hidden;height:80vh;}
+    .slides {display:flex;transition:transform 0.5s ease-in-out;height:100%;}
+    .slide {min-width:100%;height:100%;background-size:cover;background-position:center;}
+    .slider-btn {
+      position:absolute;top:50%;transform:translateY(-50%);
+      background:rgba(255,255,255,0.7);border:none;padding:0.7rem;
+      cursor:pointer;border-radius:50%;box-shadow:var(--shadow);
+    }
+    .prev {left:1rem;}
+    .next {right:1rem;}
+    .dots {position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);display:flex;gap:0.5rem;}
+    .dot {
+      width:12px;height:12px;border-radius:50%;background:#ddd;cursor:pointer;
+    }
+    .dot.active {background:var(--primary-strong);}
+
+    section {padding:4rem 2rem;text-align:center;}
+    h2 {font-size:2rem;margin-bottom:1.5rem;color:var(--primary-strong);}
+
+    .services {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
+    .service {
+      background:var(--bg-light);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow);
+    }
+    .service h3 {margin-bottom:0.5rem;color:var(--primary-strong);}
+
+    .gallery {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+    .gallery img {width:100%;border-radius:var(--radius);box-shadow:var(--shadow);}
+
+    .reviews {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
+    .review {
+      background:var(--bg-light);padding:1.5rem;border-radius:var(--radius);box-shadow:var(--shadow);
+      font-style:italic;
+    }
+
+    .cta {
+      background:var(--primary);color:white;padding:3rem 2rem;border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .cta h2 {color:white;}
+    .cta a {
+      display:inline-block;margin-top:1rem;padding:0.7rem 1.5rem;background:white;color:var(--primary-strong);
+      border-radius:var(--radius);text-decoration:none;font-weight:bold;box-shadow:var(--shadow);
+    }
+    .cta a:hover {background:#f7f7f7;}
+
+    footer {
+      background:var(--bg-light);padding:2rem;text-align:center;color:var(--text-light);font-size:0.9rem;
+      margin-top:2rem;box-shadow:var(--shadow);
+    }
+
+    /* Responsive Nav */
+    @media(max-width:768px){
+      nav ul {display:none;flex-direction:column;gap:1rem;position:absolute;top:60px;right:2rem;
+        background:white;padding:1rem 2rem;border-radius:var(--radius);box-shadow:var(--shadow);}
+      nav ul.show {display:flex;}
+      .menu-toggle {display:block;}
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="navbar">
-    <div class="logo">Nails Kurwa</div>
+  <header>
+    <h1>Nails Kurwa</h1>
+    <div class="menu-toggle">☰</div>
     <nav>
-      <ul class="nav-links">
+      <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="hamburger">☰</div>
     </nav>
   </header>
 
   <!-- Hero Slider -->
-  <section class="hero-slider" id="home">
+  <section id="home" class="hero">
     <div class="slides">
-      <div class="slide active"><img src="assets/hero-1.jpg" alt="Nail design 1"></div>
-      <div class="slide"><img src="assets/hero-2.jpg" alt="Nail design 2"></div>
-      <div class="slide"><img src="assets/hero-3.jpg" alt="Nail design 3"></div>
+      <div class="slide" style="background-image:url('assets/hero-1.jpg');"></div>
+      <div class="slide" style="background-image:url('assets/hero-2.jpg');"></div>
+      <div class="slide" style="background-image:url('assets/hero-3.jpg');"></div>
     </div>
-    <div class="slider-controls">
-      <span class="prev">&#10094;</span>
-      <span class="next">&#10095;</span>
-    </div>
+    <button class="slider-btn prev">❮</button>
+    <button class="slider-btn next">❯</button>
     <div class="dots"></div>
   </section>
 
   <!-- Services -->
-  <section class="services" id="services">
+  <section id="services">
     <h2>Our Services</h2>
-    <div class="service-cards">
-      <div class="card">
-        <img src="assets/service-1.jpg" alt="Manicure">
+    <div class="services">
+      <div class="service">
         <h3>Manicure</h3>
         <p>Professional manicure with premium products.</p>
       </div>
-      <div class="card">
-        <img src="assets/service-2.jpg" alt="Pedicure">
+      <div class="service">
         <h3>Pedicure</h3>
         <p>Relaxing pedicure for perfect feet and nails.</p>
       </div>
-      <div class="card">
-        <img src="assets/service-3.jpg" alt="Nail Art">
+      <div class="service">
         <h3>Nail Art</h3>
         <p>Unique and creative designs for any occasion.</p>
       </div>
@@ -59,45 +140,72 @@
   </section>
 
   <!-- Gallery -->
-  <section class="gallery" id="gallery">
-    <h2>Our Gallery</h2>
-    <div class="gallery-slider">
-      <div class="gallery-slides">
-        <div class="gallery-slide active"><img src="assets/gallery-1.jpg" alt="Gallery 1"></div>
-        <div class="gallery-slide"><img src="assets/gallery-2.jpg" alt="Gallery 2"></div>
-        <div class="gallery-slide"><img src="assets/gallery-3.jpg" alt="Gallery 3"></div>
-      </div>
-      <div class="gallery-controls">
-        <span class="prev">&#10094;</span>
-        <span class="next">&#10095;</span>
-      </div>
-      <div class="gallery-dots"></div>
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="assets/gallery-1.jpg" alt="Nail design 1">
+      <img src="assets/gallery-2.jpg" alt="Nail design 2">
+      <img src="assets/gallery-3.jpg" alt="Nail design 3">
+      <img src="assets/gallery-4.jpg" alt="Nail design 4">
     </div>
   </section>
 
   <!-- Reviews -->
-  <section class="reviews" id="reviews">
-    <h2>Customer Reviews</h2>
-    <div class="review">
-      <p>"Amazing service! My nails have never looked better." - Sarah L.</p>
-    </div>
-    <div class="review">
-      <p>"Professional and creative. Highly recommend!" - Emma W.</p>
+  <section id="reviews">
+    <h2>Reviews</h2>
+    <div class="reviews">
+      <div class="review">“Amazing service and beautiful nails!” – Anna</div>
+      <div class="review">“Super relaxing pedicure, highly recommend.” – Maria</div>
+      <div class="review">“Creative designs and professional staff.” – Julia</div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <h2>Book Your Appointment</h2>
-    <a href="https://wa.me/34123456789" class="btn">WhatsApp Us</a>
-    <a href="mailto:reservas@nailstudio.com" class="btn">Email Us</a>
+  <!-- CTA -->
+  <section id="contact" class="cta">
+    <h2>Book Your Appointment Today</h2>
+    <a href="https://wa.me/34123456789">Contact via WhatsApp</a>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Nails Kurwa. All rights reserved.</p>
+    <p>© 2025 Nails Kurwa. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Responsive nav
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+    menuToggle.addEventListener('click',()=>{navLinks.classList.toggle('show');});
+
+    // Slider
+    const slides = document.querySelector('.slides');
+    const slideItems = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const dotsContainer = document.querySelector('.dots');
+    let index=0, interval;
+
+    function showSlide(i){
+      index=(i+slideItems.length)%slideItems.length;
+      slides.style.transform=`translateX(${-index*100}%)`;
+      document.querySelectorAll('.dot').forEach((dot,idx)=>{
+        dot.classList.toggle('active',idx===index);
+      });
+    }
+
+    slideItems.forEach((_,i)=>{
+      const dot=document.createElement('div');
+      dot.classList.add('dot');
+      dot.addEventListener('click',()=>showSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    prevBtn.addEventListener('click',()=>{showSlide(index-1);resetInterval();});
+    nextBtn.addEventListener('click',()=>{showSlide(index+1);resetInterval();});
+
+    function autoPlay(){interval=setInterval(()=>showSlide(index+1),4000);}
+    function resetInterval(){clearInterval(interval);autoPlay();}
+
+    showSlide(0);autoPlay();
+  </script>
 </body>
 </html>
