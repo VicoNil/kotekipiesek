@@ -115,6 +115,29 @@
     /* ENTRADAS/ANIMACIÓN */
     .reveal{opacity:0;transform:translateY(10px);transition:all .6s ease}
     .reveal.show{opacity:1;transform:none}
+
+    .language-switcher {
+  display: flex;             /* Los botones en fila */
+  gap: 10px;                 /* Espacio entre ellos */
+  justify-content: flex-end; /* Alineados a la derecha (cambia a center o flex-start si quieres) */
+  margin: 10px 0;            /* Separación de otros elementos */
+}
+
+.lang-btn {
+  padding: 5px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
   </style>
 </head>
 <body>
@@ -358,11 +381,13 @@
       </div>
       <p class="muted" style="margin-top:12px">© <span id="year"></span> Nails Kurwa. Todos los derechos reservados.</p>
     </div>
-    <div style="text-align:center; margin-top:20px;">
-      <button onclick="window.location.href='https://viconil.github.io/kotekipiesek/'">Español</button>
-      <button onclick="window.location.href='https://viconil.github.io/kotekipiesek/en/'">English</button>
-      <button onclick="window.location.href='https://viconil.github.io/kotekipiesek/pl/'">Polski</button>
+    <!-- Contenedor de botones de idioma -->
+    <div class="language-switcher">
+      <button class="lang-btn" onclick="cambiarIdioma('es')">ES</button>
+      <button class="lang-btn" onclick="cambiarIdioma('en')">EN</button>
+      <button class="lang-btn" onclick="cambiarIdioma('pl')">PL</button>
     </div>
+
   </footer>
 
   <!-- BOTÓN WHATSAPP -->
