@@ -288,7 +288,7 @@ section{padding:64px 0}
     </div>
     <div class="carousel" aria-roledescription="carrusel" aria-label="Trabajos recientes">
       <!-- Sustituye las imágenes por tus fotos -->
-      <div class="item"><img src="https://via.placeholder.com/800x1000?text=Look+1" alt="Diseño de uñas 1"></div>
+      <div class="item"><img src="diseño1" alt="Diseño de uñas 1"></div>
       <div class="item"><img src="https://via.placeholder.com/800x1000?text=Look+2" alt="Diseño de uñas 2"></div>
       <div class="item"><img src="https://via.placeholder.com/800x1000?text=Look+3" alt="Diseño de uñas 3"></div>
       <div class="item"><img src="https://via.placeholder.com/800x1000?text=Look+4" alt="Diseño de uñas 4"></div>
@@ -442,13 +442,13 @@ section{padding:64px 0}
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 <script>
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.getElementById('menu');
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.getElementById('menu');
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
-    toggle.setAttribute('aria-expanded', menu.classList.contains('show'));
-  });
+menuToggle.addEventListener('click', () => {
+  const isOpen = menu.classList.toggle('show');
+  menuToggle.setAttribute('aria-expanded', isOpen);
+});
 </script>
 
     
