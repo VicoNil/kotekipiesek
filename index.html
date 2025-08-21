@@ -18,10 +18,10 @@
       --bg-soft:#f8f5f7;
       --text:#2a2a2a;
       --muted:#6b6b6b;
-      --brand:#e9b9c7; /* rosa empolvado */
-      --brand-2:#f5dde5; /* rosa muy claro */
-      --accent:#d9a1b2; /* acento */
-      --gold:#bfa27a; /* detalle dorado suave */
+      --brand:#e9b9c7; 
+      --brand-2:#f5dde5;
+      --accent:#d9a1b2; 
+      --gold:#bfa27a; 
       --radius:18px;
       --shadow:0 10px 30px rgba(0,0,0,.08);
     }
@@ -30,7 +30,7 @@
     img{max-width:100%;display:block;border-radius:14px}
     a{color:inherit;text-decoration:none}
     .container{width:min(1120px,90vw);margin:0 auto}
-    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.2rem;border-radius:999px;border:1px solid transparent;font-weight:600;cursor:pointer;transition:.25s;box-shadow:var(--shadow)}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1rem;border-radius:999px;border:1px solid transparent;font-weight:600;cursor:pointer;transition:.25s;box-shadow:var(--shadow);font-size:.9rem}
     .btn-primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#fff}
     .btn-primary:hover{transform:translateY(-2px);}
     .btn-ghost{background:#fff;border-color:#eee}
@@ -42,7 +42,7 @@
     .nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
     .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
     .brand .logo{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--brand),var(--brand-2));border:2px solid #fff;box-shadow:var(--shadow)}
-    .nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0;align-items:center}
     .nav a{padding:.6rem .9rem;border-radius:999px}
     .nav a:hover{background:var(--brand-2)}
     .menu-toggle{display:none;border:none;background:transparent;font-size:1.6rem}
@@ -113,6 +113,9 @@
     .wa{position:fixed;right:16px;bottom:16px;background:#25D366;color:#fff;border:none;border-radius:999px;padding:.9rem 1rem;display:flex;align-items:center;gap:.6rem;box-shadow:var(--shadow);z-index:40}
 
     /* ENTRADAS/ANIMACIÓN */
+section{padding:64px 0}
+    footer{background:#fff;border-top:1px solid #eee;padding:36px 0;margin-top:28px}
+    .wa{position:fixed;right:16px;bottom:16px;background:#25D366;color:#fff;border:none;border-radius:999px;padding:.9rem 1rem;display:flex;align-items:center;gap:.6rem;box-shadow:var(--shadow);z-index:40}
     .reveal{opacity:0;transform:translateY(10px);transition:all .6s ease}
     .reveal.show{opacity:1;transform:none}
   </style>
@@ -133,6 +136,10 @@
           <li><a href="#opiniones">Opiniones</a></li>
           <li><a href="#contacto">Contacto</a></li>
           <li><a class="btn btn-primary" href="#reserva">Reservar</a></li>
+          <!-- Botones de idioma -->
+          <li><a class="btn btn-ghost" href="https://viconil.github.io/kotekipiesek/">ES</a></li>
+          <li><a class="btn btn-ghost" href="https://viconil.github.io/kotekipiesek/en.html">EN</a></li>
+          <li><a class="btn btn-ghost" href="https://viconil.github.io/kotekipiesek/pl/">PL</a></li>
         </ul>
       </nav>
     </div>
@@ -341,6 +348,7 @@
 
   <!-- CONTACTO / FOOTER -->
   <footer id="contacto">
+  <footer id="contacto">
     <div class="container">
       <div class="grid cols-3">
         <div>
@@ -358,21 +366,13 @@
       </div>
       <p class="muted" style="margin-top:12px">© <span id="year"></span> Nails Kurwa. Todos los derechos reservados.</p>
     </div>
-    <div style="text-align:center; margin-top:20px;">
-  <button onclick="window.location.href='https://viconil.github.io/kotekipiesek/'">ES</button>
-  <button onclick="window.location.href='https://viconil.github.io/kotekipiesek/en.html'">EN</button>
-  <button onclick="window.location.href='https://viconil.github.io/kotekipiesek/pl/'">PL</button>
-</div>
-
   </footer>
 
   <!-- BOTÓN WHATSAPP -->
   <a class="wa" href="https://wa.me/34123456789" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
     <span aria-hidden="true">💬</span> WhatsApp
   </a>
-
   <script>
-    // NAV MOBILE
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.getElementById('menu');
     toggle.addEventListener('click',()=>{
