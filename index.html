@@ -51,16 +51,17 @@
     position: fixed;
     top: 60px; /* altura del header */
     left: 0;
-    right: 0;
+    width: 100vw; /* evita desplazamiento lateral */
+    max-width: 100%;
     background: #fff;
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
     box-shadow: 0 -10px 30px rgba(0,0,0,.15);
-    padding: 1rem 5vw;
+    padding: 1rem 6vw;
     flex-direction: column;
-    gap: .8rem;
+    gap: 1rem;
     overflow-y: auto;
-    
+
     /* animación de despliegue */
     max-height: 0;
     opacity: 0;
@@ -68,7 +69,7 @@
     transition: all .35s ease;
   }
   .nav ul.show {
-    max-height: 80vh; /* altura máxima visible */
+    max-height: 80vh;
     opacity: 1;
     visibility: visible;
   }
@@ -79,16 +80,24 @@
     text-align: center;
     padding: 1rem;
     font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: background .25s;
+  }
+  .nav a:hover {
+    background: var(--brand-2);
   }
 
   .menu-toggle {
     display: block;
     border: none;
     background: transparent;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     cursor: pointer;
+    color: var(--accent);
   }
 }
+
 
     /* HERO SLIDER */
     .hero{position:relative}
@@ -156,7 +165,16 @@ section{padding:64px 0}
     .wa{position:fixed;right:16px;bottom:16px;background:#25D366;color:#fff;border:none;border-radius:999px;padding:.9rem 1rem;display:flex;align-items:center;gap:.6rem;box-shadow:var(--shadow);z-index:40}
     .reveal{opacity:0;transform:translateY(10px);transition:all .6s ease}
     .reveal.show{opacity:1;transform:none}
- 
+ /* Marca más llamativa pero elegante */
+.brand span:last-child {
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: .5px;
+}
+
   
   </style>
 </head>
