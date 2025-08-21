@@ -46,26 +46,49 @@
     .nav a{padding:.6rem .9rem;border-radius:999px}
     .nav a:hover{background:var(--brand-2)}
     .menu-toggle{display:none;border:none;background:transparent;font-size:1.6rem}
-    @media (max-width: 860px){
-.nav ul {
-  position: fixed;
-  top: 60px; /* altura aproximada del header */
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
-  box-shadow: 0 -10px 30px rgba(0,0,0,.15);
-  padding: 1rem 5vw;
-  display: none;
-  flex-direction: column;
-  gap: .4rem;
-  overflow-y: auto; /* para que se pueda scrollear */
+@media (max-width: 860px){
+  .nav ul {
+    position: fixed;
+    top: 60px; /* altura del header */
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 -10px 30px rgba(0,0,0,.15);
+    padding: 1rem 5vw;
+    flex-direction: column;
+    gap: .8rem;
+    overflow-y: auto;
+    
+    /* animación de despliegue */
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .35s ease;
+  }
+  .nav ul.show {
+    max-height: 80vh; /* altura máxima visible */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    border: none;
+    background: transparent;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
 }
-      .nav ul.show{display:flex}
-      .menu-toggle{display:block}
-    }
 
     /* HERO SLIDER */
     .hero{position:relative}
@@ -442,12 +465,12 @@ section{padding:64px 0}
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 <script>
-const menuToggle = document.querySelector('.menu-toggle');
+const toggle = document.querySelector('.menu-toggle');
 const menu = document.getElementById('menu');
 
-menuToggle.addEventListener('click', () => {
-  const isOpen = menu.classList.toggle('show');
-  menuToggle.setAttribute('aria-expanded', isOpen);
+toggle.addEventListener('click', () => {
+  const open = menu.classList.toggle('show');
+  toggle.setAttribute('aria-expanded', open);
 });
 </script>
 
