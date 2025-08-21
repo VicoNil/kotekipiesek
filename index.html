@@ -47,7 +47,22 @@
     .nav a:hover{background:var(--brand-2)}
     .menu-toggle{display:none;border:none;background:transparent;font-size:1.6rem}
     @media (max-width: 860px){
-      .nav ul{position:fixed;inset:auto 0 0 0;background:#fff;border-top-left-radius:18px;border-top-right-radius:18px;box-shadow:0 -10px 30px rgba(0,0,0,.15);padding:1rem 5vw;display:none;flex-direction:column;gap:.4rem}
+.nav ul {
+  position: fixed;
+  top: 60px; /* altura aproximada del header */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 -10px 30px rgba(0,0,0,.15);
+  padding: 1rem 5vw;
+  display: none;
+  flex-direction: column;
+  gap: .4rem;
+  overflow-y: auto; /* para que se pueda scrollear */
+}
       .nav ul.show{display:flex}
       .menu-toggle{display:block}
     }
@@ -118,6 +133,8 @@ section{padding:64px 0}
     .wa{position:fixed;right:16px;bottom:16px;background:#25D366;color:#fff;border:none;border-radius:999px;padding:.9rem 1rem;display:flex;align-items:center;gap:.6rem;box-shadow:var(--shadow);z-index:40}
     .reveal{opacity:0;transform:translateY(10px);transition:all .6s ease}
     .reveal.show{opacity:1;transform:none}
+ 
+  
   </style>
 </head>
 <body>
@@ -424,5 +441,16 @@ section{padding:64px 0}
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+    toggle.setAttribute('aria-expanded', menu.classList.contains('show'));
+  });
+</script>
+
+    
 </body>
 </html>
