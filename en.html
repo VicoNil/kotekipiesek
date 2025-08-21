@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nails Kurwa · Nail Beauty</title>
-  <meta name="description" content="Specialized salon in manicure and pedicure. Nail designs, gel, acrylic and spa treatments. Book online." />
-  <meta property="og:title" content="Nails Kurwa · Nail Beauty" />
-  <meta property="og:description" content="Professional manicure with flawless results. Custom designs, gel, acrylic and more." />
+  <title>Nails Kurwa · Belleza de Uñas</title>
+  <meta name="description" content="Salón especializado en manicura y pedicura. Diseños de uñas, gel, acrílico y tratamientos spa. Reserva online." />
+  <meta property="og:title" content="Nails Kurwa · Belleza de Uñas" />
+  <meta property="og:description" content="Manicura profesional con acabados impecables. Diseños personalizados, gel, acrílico y más." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#f8f5f7" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,10 +18,10 @@
       --bg-soft:#f8f5f7;
       --text:#2a2a2a;
       --muted:#6b6b6b;
-      --brand:#e9b9c7;
+      --brand:#e9b9c7; 
       --brand-2:#f5dde5;
-      --accent:#d9a1b2;
-      --gold:#bfa27a;
+      --accent:#d9a1b2; 
+      --gold:#bfa27a; 
       --radius:18px;
       --shadow:0 10px 30px rgba(0,0,0,.08);
     }
@@ -73,13 +73,13 @@
     .nav-arrows{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;padding:0 8px;pointer-events:none}
     .nav-arrows button{pointer-events:auto;border:none;background:#fff;border-radius:999px;width:40px;height:40px;display:grid;place-content:center;box-shadow:var(--shadow);opacity:.92}
 
-    /* SECTIONS */
+    /* SECCIONES */
     section{padding:64px 0}
     .section-title{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:28px}
     .section-title h2{font-size:clamp(22px,3vw,34px);margin:0}
     .section-title p{color:var(--muted);margin:0}
 
-    /* CARDS */
+    /* SERVICIOS */
     .grid{display:grid;gap:18px}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
     .grid.cols-4{grid-template-columns:repeat(4,1fr)}
@@ -91,49 +91,52 @@
     .price{font-weight:700;color:#111}
     .muted{color:var(--muted)}
 
-    /* CAROUSEL */
+    /* GALERÍA (carrusel scroll-snap) */
     .carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
     .carousel::-webkit-scrollbar{height:8px}
     .carousel::-webkit-scrollbar-thumb{background:#ddd;border-radius:999px}
     .carousel .item{flex:0 0 300px;scroll-snap-align:start}
     @media (max-width:600px){.carousel .item{flex-basis:80%}}
 
-    /* TESTIMONIALS */
+    /* TESTIMONIOS */
     .testimonial{background:linear-gradient(180deg,#fff, #fff0f5);border:1px solid #f1e6ea;padding:18px;border-radius:18px;display:flex;gap:12px;align-items:flex-start}
     .avatar{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 35%, #ffd7e6, #fff)}
 
-    /* CTA */
+    /* CTA RESERVA */
     .cta{background:linear-gradient(135deg, #fff, #fff, #fdf7fa);border:1px solid #f1eef0;border-radius:24px;padding:28px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:center}
     @media (max-width: 900px){.cta{grid-template-columns:1fr}}
 
     /* FOOTER */
     footer{background:#fff;border-top:1px solid #eee;padding:36px 0;margin-top:28px}
 
-    /* WHATSAPP BUTTON */
+    /* FLOTANTE WHATSAPP */
     .wa{position:fixed;right:16px;bottom:16px;background:#25D366;color:#fff;border:none;border-radius:999px;padding:.9rem 1rem;display:flex;align-items:center;gap:.6rem;box-shadow:var(--shadow);z-index:40}
 
-    /* REVEAL */
+    /* ENTRADAS/ANIMACIÓN */
+section{padding:64px 0}
+    footer{background:#fff;border-top:1px solid #eee;padding:36px 0;margin-top:28px}
+    .wa{position:fixed;right:16px;bottom:16px;background:#25D366;color:#fff;border:none;border-radius:999px;padding:.9rem 1rem;display:flex;align-items:center;gap:.6rem;box-shadow:var(--shadow);z-index:40}
     .reveal{opacity:0;transform:translateY(10px);transition:all .6s ease}
     .reveal.show{opacity:1;transform:none}
   </style>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- HEADER / NAV -->
   <header>
     <div class="container nav">
-      <a class="brand" href="#home" aria-label="Home">
+      <a class="brand" href="#home" aria-label="Inicio">
         <span class="logo" aria-hidden="true"></span>
         <span>Nails Kurwa</span>
       </a>
-      <nav aria-label="Main">
+      <nav aria-label="Principal">
         <button class="menu-toggle" aria-expanded="false" aria-controls="menu">☰</button>
         <ul id="menu">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a class="btn btn-primary" href="#booking">Book Now</a></li>
-          <!-- Language buttons -->
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#opiniones">Opiniones</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a class="btn btn-primary" href="#reserva">Reservar</a></li>
+          <!-- Botones de idioma -->
           <li><a class="btn btn-ghost" href="https://viconil.github.io/kotekipiesek/">ES</a></li>
           <li><a class="btn btn-ghost" href="https://viconil.github.io/kotekipiesek/en.html">EN</a></li>
           <li><a class="btn btn-ghost" href="https://viconil.github.io/kotekipiesek/pl/">PL</a></li>
@@ -142,165 +145,233 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <main id="home" class="hero container" aria-label="Hero">
-    <div class="slider" aria-roledescription="carousel" aria-label="Featured promotions">
+  <!-- HERO SLIDER -->
+  <main id="home" class="hero container" aria-label="Portada">
+    <div class="slider" aria-roledescription="carrusel" aria-label="Promociones destacadas">
       <div class="slides" id="slides">
         <!-- SLIDE 1 -->
-        <section class="slide" aria-label="Gel nails">
+        <section class="slide" aria-label="Uñas en gel">
           <div class="slide-inner">
             <div class="slide-text">
               <div class="badges">
-                <span class="badge">-15% First Visit</span>
-                <span class="badge">Premium Quality</span>
+                <span class="badge">-15% primera visita</span>
+                <span class="badge">Calidad Premium</span>
               </div>
-              <h1>Flawless manicure, <br>professional finish</h1>
-              <p>Specialists in gel, acrylic and custom designs. High quality materials and rigorous sterilization.</p>
+              <h1>Manicura impecable, <br>acabado profesional</h1>
+              <p>Especialistas en gel, acrílico y diseños personalizados. Materiales de alta calidad y esterilización rigurosa.</p>
               <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-                <a class="btn btn-primary" href="#booking">Book Appointment</a>
-                <a class="btn btn-ghost" href="#services">View Services</a>
+                <a class="btn btn-primary" href="#reserva">Reservar cita</a>
+                <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
               </div>
             </div>
             <div class="slide-media">
               <div class="frame">
-                <img src="https://via.placeholder.com/800x600?text=Photo+1" alt="Gel manicure with shiny finish" />
+                <!-- Pega tu foto principal aquí reemplazando el src -->
+                <img src="https://via.placeholder.com/800x600?text=Foto+1" alt="Manicura en gel con acabado brillante" />
               </div>
             </div>
           </div>
         </section>
         <!-- SLIDE 2 -->
-        <section class="slide" aria-label="Spa pedicure">
+        <section class="slide" aria-label="Pedicura spa">
           <div class="slide-inner">
             <div class="slide-text">
               <div class="badges">
-                <span class="badge">Certified Hygiene</span>
-                <span class="badge">Relaxing Spa</span>
+                <span class="badge">Higiene Certificada</span>
+                <span class="badge">Spa Relax</span>
               </div>
-              <h1>Spa pedicure <br>well-being head to toe</h1>
-              <p>Hydrating treatments and relaxing massages for smooth, healthy feet all year round.</p>
+              <h1>Pedicura spa <br> bienestar de pies a cabeza</h1>
+              <p>Tratamientos hidratantes y masajes relajantes para lucir pies suaves y saludables todo el año.</p>
               <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-                <a class="btn btn-primary" href="#booking">Book Now</a>
-                <a class="btn btn-ghost" href="#gallery">See Results</a>
+                <a class="btn btn-primary" href="#reserva">Agenda ahora</a>
+                <a class="btn btn-ghost" href="#galeria">Ver resultados</a>
               </div>
             </div>
             <div class="slide-media">
               <div class="frame">
-                <img src="https://via.placeholder.com/800x600?text=Photo+2" alt="Spa pedicure on massage chair" />
+                <img src="https://via.placeholder.com/800x600?text=Foto+2" alt="Pedicura spa en sillón de masaje" />
               </div>
             </div>
           </div>
         </section>
         <!-- SLIDE 3 -->
-        <section class="slide" aria-label="Artistic designs">
+        <section class="slide" aria-label="Diseños artísticos">
           <div class="slide-inner">
             <div class="slide-text">
               <div class="badges">
-                <span class="badge">Trends 2025</span>
-                <span class="badge">Custom Design</span>
+                <span class="badge">Tendencias 2025</span>
+                <span class="badge">Diseño a medida</span>
               </div>
-              <h1>Nail art <br>your style, your essence</h1>
-              <p>From minimalistic to glam. Bring your ideas or get inspired by our catalog.</p>
+              <h1>Arte en tus uñas <br>tu estilo, tu esencia</h1>
+              <p>Desde minimalista a glam. Trae tus ideas o déjate inspirar por nuestro catálogo.</p>
               <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-                <a class="btn btn-primary" href="#booking">I Want This Look</a>
-                <a class="btn btn-ghost" href="#reviews">What Clients Say</a>
+                <a class="btn btn-primary" href="#reserva">Quiero este look</a>
+                <a class="btn btn-ghost" href="#opiniones">Qué dicen de nosotras</a>
               </div>
             </div>
             <div class="slide-media">
               <div class="frame">
-                <img src="https://via.placeholder.com/800x600?text=Photo+3" alt="Artistic nail designs with glitter" />
+                <img src="https://via.placeholder.com/800x600?text=Foto+3" alt="Diseños artísticos de uñas con glitter" />
               </div>
             </div>
           </div>
         </section>
       </div>
       <div class="nav-arrows" aria-hidden="true">
-        <button id="prev" aria-label="Previous">‹</button>
-        <button id="next" aria-label="Next">›</button>
+        <button id="prev" aria-label="Anterior">‹</button>
+        <button id="next" aria-label="Siguiente">›</button>
       </div>
-      <div class="slider-controls" role="tablist" aria-label="Carousel dots">
-        <button class="dot" role="tab" aria-label="Go to slide 1"></button>
-        <button class="dot" role="tab" aria-label="Go to slide 2"></button>
-        <button class="dot" role="tab" aria-label="Go to slide 3"></button>
+      <div class="slider-controls" role="tablist" aria-label="Puntos del carrusel">
+        <button class="dot" role="tab" aria-controls="slide-1" aria-label="Ir a la diapositiva 1"></button>
+        <button class="dot" role="tab" aria-controls="slide-2" aria-label="Ir a la diapositiva 2"></button>
+        <button class="dot" role="tab" aria-controls="slide-3" aria-label="Ir a la diapositiva 3"></button>
       </div>
     </div>
   </main>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container reveal">
-      <h2 style="text-align:center;margin-bottom:1rem">Our Services</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>Manicure</h3>
-          <p class="muted">Classic, gel, acrylic, nail art and custom designs.</p>
+  <!-- SERVICIOS -->
+  <section id="servicios" class="container reveal">
+    <div class="section-title">
+      <h2>Servicios destacados</h2>
+      <p>Calidad y seguridad en cada detalle</p>
+    </div>
+    <div class="grid cols-3">
+      <article class="card">
+        <img src="https://via.placeholder.com/640x420?text=Servicio+1" alt="Uñas en gel" />
+        <div class="content">
+          <h3>Uñas en Gel</h3>
+          <p class="muted">Resistencia y brillo duradero con acabado natural.</p>
+          <div class="price">desde 32€</div>
         </div>
-        <div class="card">
-          <h3>Pedicure</h3>
-          <p class="muted">Relaxing spa treatments with impeccable finishes.</p>
+      </article>
+      <article class="card">
+        <img src="https://via.placeholder.com/640x420?text=Servicio+2" alt="Acrílico" />
+        <div class="content">
+          <h3>Acrílico</h3>
+          <p class="muted">Esculpido preciso y personalización total de forma.</p>
+          <div class="price">desde 35€</div>
         </div>
-        <div class="card">
-          <h3>Nail Art</h3>
-          <p class="muted">Unique and personalized creations for every style.</p>
+      </article>
+      <article class="card">
+        <img src="https://via.placeholder.com/640x420?text=Servicio+3" alt="Pedicura" />
+        <div class="content">
+          <h3>Pedicura Spa</h3>
+          <p class="muted">Hidratación profunda, exfoliación y masaje relajante.</p>
+          <div class="price">desde 28€</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- GALERÍA / PORTAFOLIO -->
+  <section id="galeria" class="container reveal">
+    <div class="section-title">
+      <h2>Galería reciente</h2>
+      <p>Desliza para ver más</p>
+    </div>
+    <div class="carousel" aria-roledescription="carrusel" aria-label="Trabajos recientes">
+      <!-- Sustituye las imágenes por tus fotos -->
+      <div class="item"><img src="https://via.placeholder.com/800x1000?text=Look+1" alt="Diseño de uñas 1"></div>
+      <div class="item"><img src="https://via.placeholder.com/800x1000?text=Look+2" alt="Diseño de uñas 2"></div>
+      <div class="item"><img src="https://via.placeholder.com/800x1000?text=Look+3" alt="Diseño de uñas 3"></div>
+      <div class="item"><img src="https://via.placeholder.com/800x1000?text=Look+4" alt="Diseño de uñas 4"></div>
+      <div class="item"><img src="https://via.placeholder.com/800x1000?text=Look+5" alt="Diseño de uñas 5"></div>
+      <div class="item"><img src="https://via.placeholder.com/800x1000?text=Look+6" alt="Diseño de uñas 6"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="opiniones" class="container reveal">
+    <div class="section-title">
+      <h2>Opiniones</h2>
+      <p>Clientes felices, resultados perfectos</p>
+    </div>
+    <div class="grid cols-3">
+      <div class="testimonial">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <strong>María</strong>
+          <p class="muted">“La mejor manicura que me he hecho. El brillo dura semanas.”</p>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <strong>Laura</strong>
+          <p class="muted">“Trato excelente y diseños súper detallados. Repetiré seguro.”</p>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <strong>Ana</strong>
+          <p class="muted">“Higiene impecable y resultados preciosos. ¡Recomendadísimo!”</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section id="gallery" style="background:#fff">
-    <div class="container reveal">
-      <h2 style="text-align:center;margin-bottom:1rem">Gallery</h2>
-      <div class="grid cols-3">
-        <img src="https://picsum.photos/400/300?1" alt="Nail design 1">
-        <img src="https://picsum.photos/400/300?2" alt="Nail design 2">
-        <img src="https://picsum.photos/400/300?3" alt="Nail design 3">
+  <!-- CTA RESERVA -->
+  <section id="reserva" class="container reveal">
+    <div class="cta">
+      <div>
+        <h2>Reserva tu cita</h2>
+        <p class="muted">Elige día y hora. Te confirmaremos por WhatsApp o email.</p>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:8px">
+          <a class="btn btn-primary" href="#contacto">Contactar ahora</a>
+          <a class="btn btn-ghost" href="#servicios">Ver tarifas</a>
+        </div>
       </div>
+      <form id="booking" class="card" style="padding:16px">
+        <label>Nombre<br>
+          <input required name="name" type="text" placeholder="Tu nombre" style="width:100%;padding:.8rem;border-radius:12px;border:1px solid #e8e6ea;margin-top:6px">
+        </label>
+        <div style="height:8px"></div>
+        <label>Fecha y hora<br>
+          <input required name="datetime" type="datetime-local" style="width:100%;padding:.8rem;border-radius:12px;border:1px solid #e8e6ea;margin-top:6px">
+        </label>
+        <div style="height:8px"></div>
+        <label>Servicio<br>
+          <select name="service" style="width:100%;padding:.8rem;border-radius:12px;border:1px solid #e8e6ea;margin-top:6px">
+            <option>Uñas en gel</option>
+            <option>Acrílico</option>
+            <option>Pedicura spa</option>
+            <option>Relleno / Mantenimiento</option>
+          </select>
+        </label>
+        <div style="height:12px"></div>
+        <button class="btn btn-primary" type="submit">Solicitar reserva</button>
+        <p id="booking-msg" class="muted" style="margin-top:8px"></p>
+      </form>
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section id="reviews">
-    <div class="container reveal">
-      <h2 style="text-align:center;margin-bottom:1rem">Reviews</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <p>"Best manicure I've ever had! The designs are spectacular."</p>
-          <p class="muted">– Laura G.</p>
-        </div>
-        <div class="card">
-          <p>"Excellent attention and high-quality products. Totally recommended."</p>
-          <p class="muted">– Marta S.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT / FOOTER -->
-  <footer id="contact">
+  <!-- CONTACTO / FOOTER -->
+  <footer id="contacto">
+  <footer id="contacto">
     <div class="container">
       <div class="grid cols-3">
         <div>
           <div class="brand"><span class="logo" aria-hidden="true"></span><span>Nails Kurwa</span></div>
-          <p class="muted">123 Your Street, City · Mon–Fri 10:00–20:00 · Sat 10:00–14:00</p>
+          <p class="muted">C/ Tu Dirección 123, Ciudad · L–V 10:00–20:00 · S 10:00–14:00</p>
         </div>
         <div>
-          <strong>Contact</strong>
-          <p class="muted">Phone: <a href="tel:+34123456789">+34 123 456 789</a><br>Email: <a href="mailto:hello@glownails.com">hello@glownails.com</a></p>
+          <strong>Contacto</strong>
+          <p class="muted">Tel: <a href="tel:+34123456789">+34 123 456 789</a><br>Email: <a href="mailto:hola@glownails.es">hola@glownails.es</a></p>
         </div>
         <div>
-          <strong>Follow Us</strong>
+          <strong>Síguenos</strong>
           <p class="muted"><a href="#">Instagram</a> · <a href="#">TikTok</a> · <a href="#">Facebook</a></p>
         </div>
       </div>
-      <p class="muted" style="margin-top:12px">© <span id="year"></span> Nails Kurwa. All rights reserved.</p>
+      <p class="muted" style="margin-top:12px">© <span id="year"></span> Nails Kurwa. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <!-- WHATSAPP BUTTON -->
-  <a class="wa" href="https://wa.me/34123456789" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <!-- BOTÓN WHATSAPP -->
+  <a class="wa" href="https://wa.me/34123456789" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
     <span aria-hidden="true">💬</span> WhatsApp
   </a>
-
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.getElementById('menu');
@@ -309,16 +380,48 @@
       toggle.setAttribute('aria-expanded', open);
     });
 
-    const reveals = document.querySelectorAll('.reveal');
-    const revealOnScroll=()=>{
-      for(const el of reveals){
-        const rect=el.getBoundingClientRect();
-        if(rect.top<window.innerHeight-60) el.classList.add('show');
-      }
-    }
-    window.addEventListener('scroll',revealOnScroll);
-    window.addEventListener('load',revealOnScroll);
+    // SLIDER LÓGICA
+    const slides = document.getElementById('slides');
+    const total = slides.children.length; // 3
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let index = 0;
+    let timer;
 
+    function go(i){
+      index = (i + total) % total;
+      slides.style.transform = `translateX(-${index*100}%)`;
+      dots.forEach((d,di)=>d.classList.toggle('active', di===index));
+      restart();
+    }
+    function restart(){
+      clearInterval(timer);
+      timer = setInterval(()=>go(index+1), 6000);
+    }
+    dots.forEach((d,di)=>d.addEventListener('click',()=>go(di)));
+    prev.addEventListener('click',()=>go(index-1));
+    next.addEventListener('click',()=>go(index+1));
+    go(0);
+
+    // REVEAL ON SCROLL
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+      })
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // FORM (simulación)
+    document.getElementById('booking').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      const msg = document.getElementById('booking-msg');
+      msg.textContent = `¡Gracias ${data.name}! Te contactaremos para confirmar tu cita de ${data.service}.`;
+      e.target.reset();
+    });
+
+    // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
