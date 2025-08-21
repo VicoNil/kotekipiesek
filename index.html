@@ -51,7 +51,7 @@
     position: fixed;
     top: 60px; /* altura del header */
     left: 0;
-    width: 100vw; /* evita desplazamiento lateral */
+    width: 100vw; /* evita scroll lateral */
     max-width: 100%;
     background: #fff;
     border-top-left-radius: 18px;
@@ -66,12 +66,14 @@
     max-height: 0;
     opacity: 0;
     visibility: hidden;
+    transform: translateY(-10px);
     transition: all .35s ease;
   }
   .nav ul.show {
     max-height: 80vh;
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
   }
 
   .nav a {
@@ -82,10 +84,11 @@
     font-size: 1.1rem;
     font-weight: 500;
     border-radius: 12px;
-    transition: background .25s;
+    transition: background .25s, transform .25s;
   }
   .nav a:hover {
     background: var(--brand-2);
+    transform: translateY(-2px);
   }
 
   .menu-toggle {
@@ -95,6 +98,10 @@
     font-size: 1.9rem;
     cursor: pointer;
     color: var(--accent);
+    transition: transform .25s;
+  }
+  .menu-toggle:active {
+    transform: scale(0.9);
   }
 }
 
